@@ -9,8 +9,8 @@ namespace API.Models
     {
         public Guid Id { get; set; }
         public String StoreName { get; set; }
-        public List<String> PresentationLayer { get; set; }
-        public List <String> BusinessLogicLayer { get; set; }
-        
+        public String PresentationLayer { get; set; }
+        public String BusinessLogicLayer { get; set; }
+
     }
 }
