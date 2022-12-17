@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/danaaljamal/Desktop/tradeandTrade/API/API.csproj": {}
+    "/Users/hebahisham/Desktop/EntSH/PickNTrade/tradeandTrade/API/API.csproj": {}
   },
   "projects": {
-    "/Users/danaaljamal/Desktop/tradeandTrade/API/API.csproj": {
+    "/Users/hebahisham/Desktop/EntSH/PickNTrade/tradeandTrade/API/API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/danaaljamal/Desktop/tradeandTrade/API/API.csproj",
+        "projectUniqueName": "/Users/hebahisham/Desktop/EntSH/PickNTrade/tradeandTrade/API/API.csproj",
         "projectName": "API",
-        "projectPath": "/Users/danaaljamal/Desktop/tradeandTrade/API/API.csproj",
-        "packagesPath": "/Users/danaaljamal/.nuget/packages/",
-        "outputPath": "/Users/danaaljamal/Desktop/tradeandTrade/API/obj/",
+        "projectPath": "/Users/hebahisham/Desktop/EntSH/PickNTrade/tradeandTrade/API/API.csproj",
+        "packagesPath": "/Users/hebahisham/.nuget/packages/",
+        "outputPath": "/Users/hebahisham/Desktop/EntSH/PickNTrade/tradeandTrade/API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/danaaljamal/.nuget/NuGet/NuGet.Config"
+          "/Users/hebahisham/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -38,6 +38,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.1, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -71,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.300/RuntimeIdentifierGraph.json"
         }
       }
     }
