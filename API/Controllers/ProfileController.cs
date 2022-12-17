@@ -46,7 +46,7 @@ namespace API.Controllers
 
     //add one Profile whenever we run the app 
     [HttpPost]
-    public async Task<IActionResult> AddNewProfile(Profile newProfile){
+    public async Task<IActionResult> AddNewProfile(){
         try{
             if(_database.Profiles.FirstOrDefault(x=> x.Name == "Aeiman Gadafi") == null ){
                  var p = new Profile{
@@ -60,10 +60,12 @@ namespace API.Controllers
                 LinkinLink="https://www.linkedin.com/in/aeiman/",
                 InstaLink ="https://www.instagram.com/aeimangadafi/"
             };
-            await _database.Profiles.AddAsync(newProfile);
+            await _database.Profiles.AddAsync(p);
             _database.SaveChanges();
+            return Ok (p); 
             }
-            return Ok (newProfile); 
+            return Ok("there is a profile");
+            
         }
         catch(System.Exception){
              return BadRequest();
