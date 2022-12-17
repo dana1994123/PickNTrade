@@ -86,7 +86,7 @@ namespace API.Controllers
     public async Task<IActionResult> updateProfileAsync(Profile newProfile ){
         //we only have one profile so
         try{
-            var currentProfile = _database.Profiles.FirstOrDefault(x => x.Id == new Guid("36b328ff-85fe-4baf-99bf-d304f30cb964") );
+            var currentProfile = _database.Profiles.FirstOrDefault(x=> x.Name == "Aeiman Gadafi");;
             //var currentProfile = await _database.Profiles.FindAsync(new Guid("36b328ff-85fe-4baf-99bf-d304f30cb964"));
             currentProfile.Name = newProfile.Name;
             currentProfile.Avatar = newProfile.Avatar;
