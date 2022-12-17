@@ -33,7 +33,7 @@ namespace API.Controllers
     }
 
 
-    //add a list of product at the beg product 
+    //add a product 
     [HttpPost]
     public async Task<IActionResult> CreatProductAsync( Product p)
     {
