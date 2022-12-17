@@ -32,24 +32,39 @@ namespace API.Controllers
     }
 
 
-    //add a product 
+    //add a list of product at the beg product 
     [HttpPost]
-    public async Task<IActionResult> CreatProductAsync(Product product)
+    public async Task<IActionResult> CreatProductAsync(Product p , IFormFile image )
     {
-        try{
+        try{  
             //add tthe product where the image is a byte type 
-            await _database.Products.AddAsync(product);
+            using(var ms = new MemoryStream()){
+                image.CopyTo(ms);
+                var fileBytes = ms.ToArray();
+                string s = Convert.ToBase64String(fileBytes);
+            }
+            // var pro = new Product{
+
+
+            // }
+
+     
+            await _database.Products.AddAsync(p);
 
             await _database.SaveChangesAsync(); 
-            
+
             //we return to the caller again to be able to figre out the Id so I can know which one to be added 
-            return Ok(product);
+            return Ok (_database.Products);
         }
         catch(System.Exception){
             return BadRequest();
         }
 
     }
+
+
+
+  
 
 
 //get specific product based on the id 

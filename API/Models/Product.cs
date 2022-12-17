@@ -8,9 +8,11 @@ namespace API.Services
         public string Name { get; set; }
         public string Description { get; set; }
         public double PointCost { get; set; }
-        public byte[] Image{get;set;} 
+        public byte[]? Image{get;set;} 
         public String Owner { get; set; }
         public List<Questions> Questions { get; set; }
         public List<Request> Requests { get; set; }
     }
 }
+
+
