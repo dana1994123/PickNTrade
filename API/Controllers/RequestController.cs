@@ -36,7 +36,7 @@ namespace API.Controllers
         }
         //add a request for a specific product
         [HttpPost("{id}")]
-        public async Task<IActionResult> AddRequestToProductAsync([FromQuery]string id ,[FromBody] Request r ){
+        public async Task<IActionResult> AddRequestToProductAsync(string id ,[FromBody] Request r ){
             try{
                 var product = await _database.Products.Include(x=>x.Requests).SingleOrDefaultAsync(x=> x.Id == new Guid(id));
 
