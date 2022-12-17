@@ -1429,11 +1429,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/hebahisham/Desktop/EntSH/PickNTrade/tradeandTrade/API/API.csproj",
+      "projectUniqueName": "/Users/hebahisham/Desktop/PickNTrade/tradeandTrade/API/API.csproj",
       "projectName": "API",
-      "projectPath": "/Users/hebahisham/Desktop/EntSH/PickNTrade/tradeandTrade/API/API.csproj",
+      "projectPath": "/Users/hebahisham/Desktop/PickNTrade/tradeandTrade/API/API.csproj",
       "packagesPath": "/Users/hebahisham/.nuget/packages/",
-      "outputPath": "/Users/hebahisham/Desktop/EntSH/PickNTrade/tradeandTrade/API/obj/",
+      "outputPath": "/Users/hebahisham/Desktop/PickNTrade/tradeandTrade/API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/hebahisham/.nuget/NuGet/NuGet.Config"
