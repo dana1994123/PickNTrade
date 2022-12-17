@@ -11,7 +11,7 @@ namespace API.Services
     {
         public DbSet<Product> Products { get; set; }
         public DbSet<Profile> Profiles { get; set; }
-        public DbSet<Questions> Questions { get; set; }
+        public DbSet<Store> Store { get; set; }
         public DbSet<Request> Requests { get; set; }
 
 

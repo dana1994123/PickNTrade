@@ -10,7 +10,6 @@ namespace API.Services
         public double PointCost { get; set; }
         public String Image{get;set;} 
         public String Owner { get; set; }
-        public List<Questions> Questions { get; set; }
         public List<Request> Requests { get; set; }
     }
 }
