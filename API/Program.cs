@@ -36,4 +36,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+
+app.UseCors("AcceptAllPolicy");
+
 app.Run();
