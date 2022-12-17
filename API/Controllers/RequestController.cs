@@ -36,7 +36,7 @@ namespace API.Controllers
         }
         //add a request for a specific product
         [HttpPost("{id}")]
-        public async Task<IActionResult> AddRequestToProductAsync(string id ,[FromBody] Request r ){
+        public async Task<IActionResult> AddRequestToProductAsync(string id , Request r ){
             try{
                 var product = await _database.Products.Include(x=>x.Requests).SingleOrDefaultAsync(x=> x.Id == new Guid(id));
 
@@ -46,7 +46,7 @@ namespace API.Controllers
 
                 product.Requests.Add(r);
                 await _database.SaveChangesAsync();
-                return Ok("");
+                return Ok(r);
             }
              catch(System.Exception){
                 return BadRequest();
