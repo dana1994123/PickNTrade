@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using API.Helper;
 using API.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -34,27 +35,16 @@ namespace API.Controllers
 
     //add a list of product at the beg product 
     [HttpPost]
-    public async Task<IActionResult> CreatProductAsync(Product p , IFormFile image )
+    public async Task<IActionResult> CreatProductAsync( Product p)
     {
         try{  
-            //add tthe product where the image is a byte type 
-            using(var ms = new MemoryStream()){
-                image.CopyTo(ms);
-                var fileBytes = ms.ToArray();
-                string s = Convert.ToBase64String(fileBytes);
-            }
-            // var pro = new Product{
-
-
-            // }
-
-     
             await _database.Products.AddAsync(p);
 
             await _database.SaveChangesAsync(); 
 
+            return Ok(p); 
+
             //we return to the caller again to be able to figre out the Id so I can know which one to be added 
-            return Ok (_database.Products);
         }
         catch(System.Exception){
             return BadRequest();
