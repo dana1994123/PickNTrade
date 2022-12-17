@@ -22,9 +22,9 @@ namespace API.Controllers
 
     //get all the products and paging at the same time to show in the home page 
     [HttpGet]
-    public IActionResult GetAllProducts([FromQuery] int pagenumber , int pagesize){
+    public IActionResult GetAllProducts(){
         try{
-            var data = _database.Products.Skip((pagenumber-1)*pagesize).Take(pagesize);
+            var data = _database.Products;
             return Ok(_database.Products); 
         }
         catch(System.Exception){

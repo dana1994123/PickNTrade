@@ -22,10 +22,12 @@ namespace API.Controllers
 
         //get requests for specific product 
         [HttpGet("{id}")]
-        public async Task<IActionResult> getRequestsForSpecificProductsAsync(Guid id ){
+        public async Task<IActionResult> getRequestsForSpecificProductsAsync(String id ){
             try{
-                var requestsForProduct = await _database.Products.FindAsync(id);
-                return Ok(requestsForProduct);
+                var product = await _database.Products
+                .Include( x=> x.Requests)
+                .SingleOrDefaultAsync(x=> x.Id == new Guid(id));
+                return Ok(product.Requests);
             }
              catch(System.Exception){
              return BadRequest();
@@ -34,7 +36,7 @@ namespace API.Controllers
         }
         //add a request for a specific product
         [HttpPost("{id}")]
-        public async Task<IActionResult> AddRequestToProductAsync(string id , Request r ){
+        public async Task<IActionResult> AddRequestToProductAsync([FromQuery]string id ,[FromBody] Request r ){
             try{
                 var product = await _database.Products.Include(x=>x.Requests).SingleOrDefaultAsync(x=> x.Id == new Guid(id));
 
