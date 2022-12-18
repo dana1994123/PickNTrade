@@ -41,6 +41,7 @@ namespace API.Controllers
         try{  
 
             await _database.Products.AddAsync(p);
+            
 
             await _database.SaveChangesAsync(); 
 
