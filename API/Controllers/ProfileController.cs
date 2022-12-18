@@ -57,6 +57,7 @@ namespace API.Controllers
                 Email ="AeimanGadafi@gmail.com",
                 Mobile = "905-449-4423",
                 Avatar  ="https://cdn-icons-png.flaticon.com/512/2490/2490505.png",
+                Points = 0,
                 PhoneNumber="647-888-4567",
                 FacebookLink ="https://www.facebook.com/aeiman.gadafi",
                 LinkinLink="https://www.linkedin.com/in/aeiman/",

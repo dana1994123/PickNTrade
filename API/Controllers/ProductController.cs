@@ -99,9 +99,9 @@ namespace API.Controllers
 
 
     [HttpGet("{id}")]
-    public IActionResult getPRoductById(String id){
+    public async Task<IActionResult> getPRoductByIdAsync(String id){
         try{
-            var product = _database.Products.Include(x=> x.Requests).FirstOrDefaultAsync(x=> x.Id == new Guid(id));
+            var product = await _database.Products.Include(x=> x.Requests).FirstOrDefaultAsync(x=> x.Id == new Guid(id));
 
             if(product == null){
                 return NotFound("There is no product with this id");

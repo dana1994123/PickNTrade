@@ -15,6 +15,7 @@ namespace API.Models
         public String Email { get; set; }
         public String Mobile { get; set; }
         public String Avatar { get; set; }
+        public int Points { get; set; }
 
         public String PhoneNumber { get; set; }
 
