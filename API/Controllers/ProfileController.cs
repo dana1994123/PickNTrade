@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using API.Models;
 using API.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
@@ -35,7 +36,8 @@ namespace API.Controllers
     {
         try{
         //get specific profile based on the id 
-            var profile =  _database.Profiles.FirstOrDefault(x=> x.Name == "Aeiman Gadafi");
+            var profile =  _database.Profiles.Include(x=> x.MyListingProduct)
+            .FirstOrDefault(x=> x.Name == "Aeiman Gadafi");
             return Ok(profile); 
         }
          catch(System.Exception){
@@ -103,6 +105,13 @@ namespace API.Controllers
          catch(System.Exception){
             return BadRequest();
         }
+    }
+
+//get a specific product for a specific profile 
+    [HttpGet("specificProfileProduct")]
+    public IActionResult getSpecificProductProfile(){
+        var productForSpecificProfile = _database.Products.Where(x=> x.Owner == "Aeiman Gadafi");
+        return Ok(productForSpecificProfile);
     }
         
     }
