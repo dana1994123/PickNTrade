@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using API.Helper;
 using API.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
@@ -55,12 +56,14 @@ namespace API.Controllers
 
     
 //get specific product based on the id 
-    [HttpGet("{id}")]
-    public async Task<IActionResult> GetSpecifyProduct(String id )
+    [HttpGet("Listing")]
+    public async Task<IActionResult> GetSpecificProducts( )
     {
         try{
-            var product =await _database.Products.FindAsync(new Guid(id)); 
-            return Ok(product); 
+            var productListing = await _database.Profiles
+            .Include(x=> x.MyListingProduct)
+            .SingleOrDefaultAsync(x=> x.Id == new Guid("ae5793e3-574a-4e1c-82e0-d0a8b02c0ff2") );
+            return Ok(productListing); 
         }
         catch(System.Exception){
             return BadRequest();
