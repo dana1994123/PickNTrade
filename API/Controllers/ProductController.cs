@@ -39,6 +39,14 @@ namespace API.Controllers
     public async Task<IActionResult> CreatProductAsync( Product p)
     {
         try{  
+            //add the product to the products and to the profile listing 
+            var profile =await  _database.Profiles
+            .Include(x=> x.MyListingProduct)
+            .FirstOrDefaultAsync(x=> x.Name ==  "Aeiman Gadafi");
+
+            profile.MyListingProduct.Append(p); 
+            await _database.SaveChangesAsync(); 
+
 
             await _database.Products.AddAsync(p);
             
@@ -56,15 +64,14 @@ namespace API.Controllers
     }
 
     
-//get specific product based on the id 
+//get specific products based on the profile id 
     [HttpGet("Listing")]
     public async Task<IActionResult> GetSpecificProducts( )
     {
         try{
-            var productListing = await _database.Profiles
-            .Include(x=> x.MyListingProduct)
-            .SingleOrDefaultAsync(x=> x.Id == new Guid("ae5793e3-574a-4e1c-82e0-d0a8b02c0ff2") );
-            return Ok(productListing); 
+            var profileProducts = _database.Products.Where(x=>x.Owner == "Aeiman Gadafi");
+
+            return Ok(profileProducts); 
         }
         catch(System.Exception){
             return BadRequest();
@@ -86,6 +93,26 @@ namespace API.Controllers
         catch(System.Exception){
             return BadRequest("wrong id.. Please try again!");
         }
+    }
+
+
+
+
+    [HttpGet("{id}")]
+    public IActionResult getPRoductById(String id){
+        try{
+            var product = _database.Products.Include(x=> x.Requests).FirstOrDefaultAsync(x=> x.Id == new Guid(id));
+
+            if(product == null){
+                return NotFound("There is no product with this id");
+            }
+            return Ok(product);
+
+        }
+        catch(System.Exception){
+            return BadRequest("wrong id.. Please try again!");
+        }
+
     }
 
     }
