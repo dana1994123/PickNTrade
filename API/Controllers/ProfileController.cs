@@ -76,12 +76,20 @@ namespace API.Controllers
     }
 
 
-    [HttpDelete]
-    public async Task<IActionResult> deleteProfileAsync(){
-        var p =  await  _database.Profiles.FindAsync(new Guid("4f4f8320-6ae5-41aa-bd1e-efe680a13fcd"));
-        _database.Profiles.Remove(p);
-         _database.SaveChanges();
-        return Ok("delete");
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> deleteProfileAsync(string id){
+        try{
+            var p =  await _database.Profiles.FindAsync(new Guid(id));
+            if(p == null){
+                return NotFound();
+            }
+            _database.Profiles.Remove(p);
+            _database.SaveChanges();
+            return Ok("delete");
+        }
+        catch(System.Exception){
+             return BadRequest();
+        }
     }
 
 
