@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/danaaljamal/Desktop/tradeandTrade/API/API.csproj": {}
+    "/Users/danaaljamal/Desktop/tradeandTrade/api/API.csproj": {}
   },
   "projects": {
-    "/Users/danaaljamal/Desktop/tradeandTrade/API/API.csproj": {
+    "/Users/danaaljamal/Desktop/tradeandTrade/api/API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/danaaljamal/Desktop/tradeandTrade/API/API.csproj",
+        "projectUniqueName": "/Users/danaaljamal/Desktop/tradeandTrade/api/API.csproj",
         "projectName": "API",
-        "projectPath": "/Users/danaaljamal/Desktop/tradeandTrade/API/API.csproj",
+        "projectPath": "/Users/danaaljamal/Desktop/tradeandTrade/api/API.csproj",
         "packagesPath": "/Users/danaaljamal/.nuget/packages/",
-        "outputPath": "/Users/danaaljamal/Desktop/tradeandTrade/API/obj/",
+        "outputPath": "/Users/danaaljamal/Desktop/tradeandTrade/api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/danaaljamal/.nuget/NuGet/NuGet.Config"

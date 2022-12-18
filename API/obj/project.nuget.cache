@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "emq42w387iJCWWhfZam7ydhLJzCMD0nOPIIhuJk9IpFz2JCdVetGgZmG3qoenF9zhdb11aI7mXa13oE1NKU1Zw==",
+  "dgSpecHash": "YlGnPRlcc9kxwj2ggEiT8qqptX9wq7iZyU2wxfwiTK2oFQf4mtU/ctBoqS3zBh5TPQPawVI6XyTRKQ53MzAv3w==",
   "success": true,
-  "projectFilePath": "/Users/danaaljamal/Desktop/tradeandTrade/API/API.csproj",
+  "projectFilePath": "/Users/danaaljamal/Desktop/tradeandTrade/api/API.csproj",
   "expectedPackageFiles": [
     "/Users/danaaljamal/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/danaaljamal/.nuget/packages/microsoft.data.sqlite.core/7.0.1/microsoft.data.sqlite.core.7.0.1.nupkg.sha512",
