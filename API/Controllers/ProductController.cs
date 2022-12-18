@@ -38,6 +38,7 @@ namespace API.Controllers
     public async Task<IActionResult> CreatProductAsync( Product p)
     {
         try{  
+
             await _database.Products.AddAsync(p);
 
             await _database.SaveChangesAsync(); 
@@ -52,11 +53,7 @@ namespace API.Controllers
 
     }
 
-
-
-  
-
-
+    
 //get specific product based on the id 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetSpecifyProduct(String id )
@@ -70,5 +67,26 @@ namespace API.Controllers
         }
     }
 
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteSpecifyProduct(String id ){
+        try{
+            var product =await _database.Products.FindAsync(new Guid(id)); 
+            if(product == null){
+                return NotFound("There is no product with this id"); 
+            }
+            _database.Products.Remove(product); 
+            _database.SaveChanges();
+            return Ok("Product Removed Successfully");
+        }
+        catch(System.Exception){
+            return BadRequest("wrong id.. Please try again!");
+        }
     }
+
+    }
+
+
+    
+
 }
